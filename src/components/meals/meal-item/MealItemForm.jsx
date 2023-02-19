@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import {ReactComponent as PlusIcons} from "../../../assets/icons/plus-icons.svg"
 import Button from '../../UI/Button'
-import { addToBasket } from '../../../store/basket/basketReducer'
+import {addToBasket} from "../../../store/basket/basketSlice"
 import { useDispatch } from 'react-redux'
 
 

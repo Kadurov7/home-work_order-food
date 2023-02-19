@@ -1,13 +1,14 @@
 import {combineReducers, createStore} from "redux"
-import basketReducer from "./basket/basketReducer"
 import thunk from "redux-thunk"
-import { mealsReducer } from "./mealsReducer/mealsReducer"
 import { applyMiddleware } from "redux"
+import { basketSlice } from "./basket/basketSlice"
+import { mealsSlice } from "./mealsReducer/mealsSlice"
+import { configureStore } from "@reduxjs/toolkit"
 
 const rootReducer = combineReducers({
-   meals: mealsReducer,
-   basket:basketReducer,
+  [basketSlice.name]: basketSlice.reducer,
+  [mealsSlice.name]: mealsSlice.reducer,
 })
 
-export const store = createStore(rootReducer, applyMiddleware(thunk))
+export const store = configureStore({reducer:rootReducer})
 

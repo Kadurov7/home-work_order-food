@@ -4,21 +4,20 @@ import TotalAmount from './TotalAmount'
 import styled from 'styled-components'
 import BasketItem from './BasketItem'
 import { useDispatch, useSelector } from 'react-redux'
-import { uptadeBasketItem } from '../../store/basket/basketReducer'
-import { deleteBasketItem } from '../../store/basket/basketReducer'
+import {deleteBasketItem, uptadeBasketItem} from "../../store/basket/basketSlice"
 
 
 const Basket = ({onClose}) => {
 
 const dispatch = useDispatch();
-const items = useSelector((state)=> state.basket.items)
+const {items }= useSelector((state)=> state.basket)
 
 const getTotalPrice = ()=>{
   return items.reduce((sum, {price, amount})=> sum + amount * price, 0)
 }
   const decrementAmount = (id, amount)=>{
       if(amount > 1) {
-        dispatch( uptadeBasketItem({amount:amount - 1, id }))
+        dispatch(uptadeBasketItem({amount: amount - 1, id}))
       }
       else{
         dispatch(deleteBasketItem(id))
@@ -26,6 +25,7 @@ const getTotalPrice = ()=>{
   }
   const incrementAmount = (id, amount)=>{
    dispatch( uptadeBasketItem({amount:amount + 1, id }))
+
   }
   return (
       <Modal onClose={onClose}>

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components';
 import BasketButton from './BasketButton';
-import { getBasket } from '../../store/basket/basketReducer';
+import { getBasket } from '../../store/basket/basketSlice';
 
 
 const Header = ({onShowBasket}) => {

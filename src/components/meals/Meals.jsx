@@ -1,36 +1,9 @@
 import React, { useEffect} from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import styled from 'styled-components'
-import { getMeals } from '../../store/mealsReducer/mealsReducer'
+import { getMeals } from '../../store/mealsReducer/mealsSlice'
 import MealItem from './meal-item/MealItem'
 
-
-// const meals = [
-//   {
-//     id:'1',
-//     title:'Sushi',
-//     descreption:'Finest fish and veggies',
-//     price: 22.99,
-//   },
-//   {
-//     id:'2',
-//     title:'Schnitzel',
-//     descreption:'A german specialty!',
-//     price:16.99,
-//   },
-//   {
-//     id:'3',
-//     title:'Barbecue Burger',
-//     descreption:'American, raw, meaty',
-//     price: 12.99,
-//   },
-//   {
-//     id:'4',
-//     title:'Green Bowl',
-//     descreption:'Healthy...and green...',
-//     price: 19.99,
-//   },
-// ]
 
 const Meals = () => {
 
